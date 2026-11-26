@@ -842,6 +842,21 @@
   .hero-scene .orbit-svg { animation: none; }
   .hero-scene .badge-tilt { transition: none; }
 }
+
+.research-band .xhint { flex-wrap: wrap; }
+.xitem[id] { scroll-margin-top: 18px; }
+.case-body { gap: 13px; }
+.case-body p { margin-bottom: 0; }
+.case-meters { margin: 11px 0 13px; display: grid; gap: 8px; max-width: 560px; }
+.case-meters div { display: grid; grid-template-columns: minmax(0, 9.5rem) 1fr; align-items: center; gap: 4px 10px; }
+.case-meters dt { color: var(--band-text); font-size: .88rem; }
+.case-meters dd { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px; margin: 0; }
+.case-meters meter { width: 100%; height: .8rem; accent-color: var(--accent); }
+.case-meters meter::-webkit-meter-optimum-value { background: var(--accent); }
+.case-meters meter::-webkit-meter-bar { background: var(--surface-2); border: none; }
+@media (max-width: 460px) {
+  .case-meters div { grid-template-columns: 1fr; }
+}
 </style>
 
 <div class="hero-scene">
@@ -1153,20 +1168,20 @@
 
     <div class="xhint">
       <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 1 1 4 2.8c-.6.3-1 1-1 1.7v.5"/><line x1="12" y1="17" x2="12.01" y2="17"/><circle cx="12" cy="12" r="10"/></svg>
-      <span data-zh="点卡片看项目详情" data-en="Open a card for project details">点卡片看项目详情</span>
-      <div class="demo-links"><a href="#curve" data-zh="国债曲线" data-en="Yield curve">国债曲线</a></div>
+      <span data-zh="从代表作品看起" data-en="Start with selected work">从代表作品看起</span>
+      <div class="demo-links"><a href="#treasury-pca" data-zh="国债研究" data-en="Treasury research">国债研究</a><a href="#byd-valuation" data-zh="比亚迪估值" data-en="BYD valuation">比亚迪估值</a><a href="#curve" data-zh="国债曲线演示" data-en="Yield curve demo">国债曲线演示</a></div>
     </div>
     
     <div class="xgrid">
 
-      <div class="xitem">
-      <button class="xtile" type="button" data-target="1" aria-expanded="false">
+      <div class="xitem" id="basis-trading">
+      <button class="xtile" type="button" data-target="1" aria-controls="basis-trading-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h13M13 4l4 4-4 4"/><path d="M21 16H8M12 12l-4 4 4 4"/></svg></span>
-        <span class="xtile-meta"><b data-zh="大商所基差贸易案例" data-en="DCE Basis-Trading Case">大商所基差贸易案例</b><em data-zh="获校内推荐参与大商所衍生品项目，担任8人小组组长，拆解真实基差贸易案例。" data-en="Nominated for DCE's derivatives program; led an 8-person team dissecting a real basis-trading case.">获校内推荐参与大商所衍生品项目，担任8人小组组长，拆解真实基差贸易案例。</em></span>
+        <span class="xtile-meta"><b data-zh="大商所基差贸易案例" data-en="DCE Basis-Trading Case">大商所基差贸易案例</b><em data-zh="一笔 500 吨聚丙烯交易，工厂、贸易商和加工厂如何分担价格风险？" data-en="How did three parties share price risk in a 500-tonne polypropylene trade?">一笔 500 吨聚丙烯交易，工厂、贸易商和加工厂如何分担价格风险？</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2026.07</span></span>
-      <div class="xdetail" data-panel="1"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="basis-trading-detail" data-panel="1" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">01</div>
           <div class="xcard-meta">
@@ -1190,15 +1205,14 @@
       </div></div></div>
       </div>
 
-      <div class="xitem">
-      
-      <button class="xtile" type="button" data-target="2" aria-expanded="false">
+      <div class="xitem" id="analyst-coverage">
+      <button class="xtile" type="button" data-target="2" aria-controls="analyst-coverage-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 19L20 6"/><circle cx="6" cy="16.5" r="1.6" fill="currentColor" stroke="none"/><circle cx="11.5" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="17" cy="8" r="1.6" fill="currentColor" stroke="none"/></svg></span>
-        <span class="xtile-meta"><b data-zh="分析师覆盖与股票流动性" data-en="Analyst Coverage &amp; Liquidity">分析师覆盖与股票流动性</b><em data-zh="基于 2SLS 工具变量，识别分析师覆盖对股票换手率的因果效应。" data-en="Used 2SLS instrumental variables to identify analyst coverage's causal effect on stock turnover.">基于 2SLS 工具变量，识别分析师覆盖对股票换手率的因果效应。</em></span>
+        <span class="xtile-meta"><b data-zh="分析师覆盖与股票流动性" data-en="Analyst Coverage &amp; Liquidity">分析师覆盖与股票流动性</b><em data-zh="用 2023–2025 年 A 股样本，比较分析师覆盖与换手率在 OLS 和 2SLS 下的估计。" data-en="Comparing OLS and 2SLS estimates of analyst coverage and stock turnover in 2023–2025 A-shares.">用 2023–2025 年 A 股样本，比较分析师覆盖与换手率在 OLS 和 2SLS 下的估计。</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2026.06</span></span>
-      <div class="xdetail" data-panel="2"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="analyst-coverage-detail" data-panel="2" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">02</div>
           <div class="xcard-meta">
@@ -1207,10 +1221,10 @@
           </div>
         </div>
         <h3 data-zh="研报覆盖对股票流动性的影响研究——基于工具变量法的因果分析" data-en="Does Analyst Coverage Affect Stock Liquidity? A Causal Analysis via Instrumental Variables">研报覆盖对股票流动性的影响研究——基于工具变量法的因果分析</h3>
-        <p data-zh="基于 2023–2025 年 A 股 CSMAR 数据，利用 2SLS 工具变量修正反向因果偏差，探究分析师研报覆盖对股票换手率的因果效应，完成数据处理、实证检验与课程论文撰写。" data-en="Using 2023–2025 A-share CSMAR data, I applied a 2SLS instrumental-variable approach to correct for reverse causality and estimate the causal effect of analyst report coverage on stock turnover — covering the full pipeline from data processing to hypothesis testing and the course paper itself.">基于 2023–2025 年 A 股 CSMAR 数据，利用 2SLS 工具变量修正反向因果偏差，探究分析师研报覆盖对股票换手率的因果效应，完成数据处理、实证检验与课程论文撰写。</p>
+        <p data-zh="用 2023–2025 年 A 股 CSMAR 数据研究研报覆盖与换手率的关系。我在 Stata 中比较 OLS 和工具变量估计，并写成课程论文。" data-en="I used 2023–2025 CSMAR A-share data to study analyst coverage and turnover, compared OLS with instrumental-variable estimates in Stata, and wrote the course paper.">用 2023–2025 年 A 股 CSMAR 数据研究研报覆盖与换手率的关系。我在 Stata 中比较 OLS 和工具变量估计，并写成课程论文。</p>
         <div class="xcard-body">
           <p data-zh="A 股整体股票换手率偏高，市场短线投机交易较为普遍。券商分析师作为信息中介，究竟会助长市场炒作，还是引导理性投资，依靠普通回归很难得到可靠结论。" data-en="A-share turnover already runs high, with short-term speculative trading fairly common. Whether sell-side analysts — as information intermediaries — fuel that speculation or steer investors toward more rational decisions is hard to answer with a plain regression.">A 股整体股票换手率偏高，市场短线投机交易较为普遍。券商分析师作为信息中介，究竟会助长市场炒作，还是引导理性投资，依靠普通回归很难得到可靠结论。</p>
-          <p data-zh="研究存在明显内生性问题：分析师更倾向去跟踪本身热度高的热门股票，会带来反向因果偏差。作为因果推断课程论文，本项目目标就是处理这类偏差，识别研报覆盖与股票换手率之间真实的因果关系。" data-en="The research faces a clear endogeneity problem: analysts tend to gravitate toward stocks that are already popular, creating reverse causality. As a causal-inference course paper, this project's goal was to correct for that bias and identify the true causal relationship between report coverage and turnover.">研究存在明显内生性问题：分析师更倾向去跟踪本身热度高的热门股票，会带来反向因果偏差。作为因果推断课程论文，本项目目标就是处理这类偏差，识别研报覆盖与股票换手率之间真实的因果关系。</p>
+          <p data-zh="热门股票本来就可能更容易被分析师跟踪，因此需要考虑反向因果。课程项目用两项工具变量处理这一问题，结论依赖工具变量假设。" data-en="Popular stocks may already attract more analysts, creating a reverse-causality concern. The course project used two instruments to address it, so the interpretation depends on instrumental-variable assumptions.">热门股票本来就可能更容易被分析师跟踪，因此需要考虑反向因果。课程项目用两项工具变量处理这一问题，结论依赖工具变量假设。</p>
           <p data-zh="项目基于 Stata 开展整套实证分析：" data-en="Built the full empirical pipeline in Stata:">项目基于 Stata 开展整套实证分析：</p>
           <ul>
             <li data-zh="整理 CSMAR A 股原始数据，选取 2023–2025 年样本；剔除金融行业，保留 ST/*ST 标的，去除关键指标缺失样本，对连续变量做 1%–99% 双侧缩尾；合并多份数据表，构建两个工具变量：行业内其余公司平均分析师关注度、行业资产规模中位数。" data-en="Cleaned raw CSMAR A-share data for 2023–2025; excluded financial-industry firms, kept ST/*ST names, dropped observations missing key indicators, and winsorized continuous variables at the 1%/99% tails; merged multiple data tables and constructed two instruments — peer firms' average analyst attention and the industry's median asset size.">整理 CSMAR A 股原始数据，选取 2023–2025 年样本；剔除金融行业，保留 ST/*ST 标的，去除关键指标缺失样本，对连续变量做 1%–99% 双侧缩尾；合并多份数据表，构建两个工具变量：行业内其余公司平均分析师关注度、行业资产规模中位数。</li>
@@ -1224,14 +1238,14 @@
       </div></div></div>
       </div>
 
-      <div class="xitem">
-      <button class="xtile" type="button" data-target="3" aria-expanded="false">
+      <div class="xitem" id="portfolio-var">
+      <button class="xtile" type="button" data-target="3" aria-controls="portfolio-var-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c3-1 4-11 9-11s6 10 9 11"/><path d="M15.5 18l2.5-5"/></svg></span>
-        <span class="xtile-meta"><b data-zh="投资组合 VaR 与动态优化" data-en="Portfolio VaR &amp; Dynamic Optimization">投资组合 VaR 与动态优化</b><em data-zh="搭建多套 VaR 模型并动态优化资产配置，对比固定权重基准表现。" data-en="Built multiple VaR models and a dynamic rebalancing strategy, benchmarked against fixed weights.">搭建多套 VaR 模型并动态优化资产配置，对比固定权重基准表现。</em></span>
+        <span class="xtile-meta"><b data-zh="投资组合 VaR 与动态优化" data-en="Portfolio VaR &amp; Dynamic Optimization">投资组合 VaR 与动态优化</b><em data-zh="同一个模拟 ETF 组合，三种 VaR 模型的回测结果有何差别？" data-en="How did three VaR models compare in backtests of the same simulated ETF portfolio?">同一个模拟 ETF 组合，三种 VaR 模型的回测结果有何差别？</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2026.05</span></span>
-      <div class="xdetail" data-panel="3"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="portfolio-var-detail" data-panel="3" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">03</div>
           <div class="xcard-meta">
@@ -1255,11 +1269,11 @@
             <tbody>
               <tr><td data-zh="历史模拟法" data-en="Historical sim.">历史模拟法</td><td class="num">1.87%</td><td class="num">1.06</td><td class="sig" data-zh="有效" data-en="Pass">有效</td></tr>
               <tr><td data-zh="时间加权(λ=0.99)" data-en="Time-weighted (λ=0.99)">时间加权(λ=0.99)</td><td class="num">1.86%</td><td class="num">1.06</td><td class="sig" data-zh="有效" data-en="Pass">有效</td></tr>
-              <tr><td data-zh="EWMA(λ=0.95)" data-en="EWMA (λ=0.95)">EWMA(λ=0.95)</td><td class="num">1.95%</td><td class="num">0.27</td><td class="sig" data-zh="有效·最优" data-en="Pass · best">有效·最优</td></tr>
+              <tr><td data-zh="EWMA(λ=0.95)" data-en="EWMA (λ=0.95)">EWMA(λ=0.95)</td><td class="num">1.95%</td><td class="num">0.27</td><td class="sig" data-zh="未被拒绝" data-en="Not rejected">未被拒绝</td></tr>
             </tbody>
           </table>
           <div class="xfinding">
-            <b data-zh="动态优于固定，但需计入成本" data-en="Dynamic beats static — with a cost caveat">动态优于固定，但需计入成本</b>
+            <b data-zh="本次仿真中，动态调仓收益更高" data-en="Rebalancing earned more in this simulation">本次仿真中，动态调仓收益更高</b>
             <span data-zh="本次回测中，动态调仓组合的收益高于固定权重组合。回测没有计入交易成本。" data-en="The rebalanced portfolio outperformed the fixed-weight portfolio in this backtest, which excluded trading costs.">本次回测中，动态调仓组合的收益高于固定权重组合。回测没有计入交易成本。</span>
           </div>
         </div>
@@ -1267,14 +1281,14 @@
       </div></div></div>
       </div>
 
-      <div class="xitem">
-      <button class="xtile" type="button" data-target="4" aria-expanded="false">
+      <div class="xitem" id="treasury-pca">
+      <button class="xtile" type="button" data-target="4" aria-controls="treasury-pca-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><ellipse cx="12" cy="12" rx="8.2" ry="3.4" transform="rotate(-30 12 12)"/></svg></span>
-        <span class="xtile-meta"><b data-zh="国债收益率曲线因子分解" data-en="Sovereign Yield Curve PCA">国债收益率曲线因子分解</b><em data-zh="用 PCA 拆解国债利率因子，对比疫情前后驱动逻辑的变化。" data-en="Applied PCA to decompose Treasury rate factors, comparing pre- and post-pandemic dynamics.">用 PCA 拆解国债利率因子，对比疫情前后驱动逻辑的变化。</em></span>
+        <span class="xtile-meta"><b data-zh="国债收益率曲线因子分解" data-en="Sovereign Yield Curve PCA">国债收益率曲线因子分解</b><em data-zh="分析 11 个国债期限。以 2020 年初分样本，水平因子的解释力由约 51% 升至 66%。" data-en="A study of 11 Treasury maturities. The level factor explained about 51% before early 2020 and 66% after.">分析 11 个国债期限。以 2020 年初分样本，水平因子的解释力由约 51% 升至 66%。</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2026.04</span></span>
-      <div class="xdetail" data-panel="4"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="treasury-pca-detail" data-panel="4" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">04</div>
           <div class="xcard-meta">
@@ -1283,28 +1297,30 @@
           </div>
         </div>
         <h3 data-zh="基于 PCA 的中国国债利率因子解构与疫情动态研究" data-en="PCA Decomposition of China's Treasury Yield Curve Factors and Pandemic-Era Dynamics">基于 PCA 的中国国债利率因子解构与疫情动态研究</h3>
-        <p data-zh="使用 Python 处理国债收益率时序数据，执行 PCA 主成分降维，提取水平、斜率、曲率三大利率因子；分疫情前后子样本做对比，可视化分析宏观冲击对利率期限结构的影响。" data-en="Used Python to process time-series Treasury yield data, ran PCA to extract the level, slope and curvature factors, and compared pre- and post-pandemic sub-samples to visualize how the macro shock affected the term structure.">使用 Python 处理国债收益率时序数据，执行 PCA 主成分降维，提取水平、斜率、曲率三大利率因子；分疫情前后子样本做对比，可视化分析宏观冲击对利率期限结构的影响。</p>
-        <div class="xcard-body">
-          <p data-zh="开展中国国债利率期限结构的实证研究，选取 2002–2026 年国债即期收益率，覆盖 3 个月至 30 年共 11 个关键期限，挖掘利率曲线变动背后的核心驱动逻辑。" data-en="Studied the term structure of China's sovereign yield curve using spot yields from 2002–2026 across 11 key tenors from 3 months to 30 years, digging into the core drivers behind yield-curve movements.">开展中国国债利率期限结构的实证研究，选取 2002–2026 年国债即期收益率，覆盖 3 个月至 30 年共 11 个关键期限，挖掘利率曲线变动背后的核心驱动逻辑。</p>
-          <p data-zh="完成原始数据预处理：使用前值填充处理缺失值；对利率序列做差分处理，解决时间序列非平稳问题；做标准化消除不同期限利率的量纲差异；计算利率变动相关系数矩阵，验证 PCA 降维的可行性。" data-en="Preprocessed the raw data: filled missing values with the last observation, differenced the yield series to address non-stationarity, standardized across tenors to remove scale differences, and computed the correlation matrix to confirm PCA was appropriate.">完成原始数据预处理：使用前值填充处理缺失值；对利率序列做差分处理，解决时间序列非平稳问题；做标准化消除不同期限利率的量纲差异；计算利率变动相关系数矩阵，验证 PCA 降维的可行性。</p>
-          <p data-zh="执行主成分分析，提取水平、斜率、曲率三大经典利率因子，三者合计解释 77.44% 的利率变动方差；结合碎石图、因子载荷曲线解读三类因子分别如何驱动收益率曲线平移、倾斜、弯曲；生成主成分得分时间序列，对照钱荒、股灾、新冠疫情等历史事件，验证因子波动与货币政策、市场宏观环境的对应关系。" data-en="Ran principal component analysis to extract the classic level, slope and curvature factors, together explaining 77.44% of total yield variance; used a scree plot and factor-loading curves to interpret how each factor drives parallel shifts, tilts and curvature changes in the curve, and generated a time series of component scores to check factor swings against events like the 2013 cash crunch, market crashes and COVID-19.">执行主成分分析，提取水平、斜率、曲率三大经典利率因子，三者合计解释 77.44% 的利率变动方差；结合碎石图、因子载荷曲线解读三类因子分别如何驱动收益率曲线平移、倾斜、弯曲；生成主成分得分时间序列，对照钱荒、股灾、新冠疫情等历史事件，验证因子波动与货币政策、市场宏观环境的对应关系。</p>
-          <p data-zh="以 2020 年初疫情冲击作为分界点，拆分为疫情前、疫情后两组子样本，完整重复 PCA 建模流程。跨时期对比因子载荷形态、方差解释率、因子波动特征。" data-en="Split the sample at the early-2020 pandemic shock into pre- and post-pandemic sub-periods and re-ran the full PCA pipeline, comparing factor loadings, variance explained and volatility across the two periods.">以 2020 年初疫情冲击作为分界点，拆分为疫情前、疫情后两组子样本，完整重复 PCA 建模流程。跨时期对比因子载荷形态、方差解释率、因子波动特征。</p>
+        <div class="xcard-body case-body">
+          <p data-zh="2020 年初前后，中国国债收益率曲线的变动方式有什么差别？我用 Python 处理 2002–2026 年的即期收益率，覆盖 3 个月至 30 年的 11 个期限。" data-en="I used Python to compare changes in China’s Treasury yield curve before and after early 2020, using 2002–2026 spot yields at 11 maturities from 3 months to 30 years.">2020 年初前后，中国国债收益率曲线的变动方式有什么差别？我用 Python 处理 2002–2026 年的即期收益率，覆盖 3 个月至 30 年的 11 个期限。</p>
+          <p data-zh="我先处理缺失值，对利率做差分和标准化，再分别对全样本和两段子样本做主成分分析（PCA）。我用因子载荷区分整条曲线平移、长短端倾斜和中段弯曲。全样本中，前三个因子合计解释 77.44% 的变动。" data-en="I filled missing values, differenced and standardised the yields, and ran PCA on the full sample and on each subsample. Loadings distinguished shifts, tilts and bends. The first three factors explained 77.44% of variation in the full sample.">我先处理缺失值，对利率做差分和标准化，再分别对全样本和两段子样本做主成分分析（PCA）。我用因子载荷区分整条曲线平移、长短端倾斜和中段弯曲。全样本中，前三个因子合计解释 77.44% 的变动。</p>
           <div class="xfinding">
-            <b data-zh="水平因子的解释力上升" data-en="The level factor explains more variation">水平因子的解释力上升</b>
-            <span data-zh="以 2020 年初为分界，两段样本都能识别出水平、斜率和曲率。水平因子的方差解释率从约 51% 升到 66%，斜率因子的解释率略有下降。" data-en="Both subsamples show level, slope and curvature factors. With early 2020 as the split, the variance share explained by the level factor rose from about 51% to 66%, while the slope factor’s share fell slightly.">以 2020 年初为分界，两段样本都能识别出水平、斜率和曲率。水平因子的方差解释率从约 51% 升到 66%，斜率因子的解释率略有下降。</span>
+            <b data-zh="水平因子的解释力上升" data-en="The level factor explained more variation">水平因子的解释力上升</b>
+            <dl class="case-meters">
+              <div><dt><span data-zh="2020 年初之前" data-en="Before early 2020">2020 年初之前</span></dt><dd><meter min="0" max="100" value="51" aria-hidden="true"></meter><span class="num">≈ 51%</span></dd></div>
+              <div><dt><span data-zh="2020 年初之后" data-en="After early 2020">2020 年初之后</span></dt><dd><meter min="0" max="100" value="66" aria-hidden="true"></meter><span class="num">≈ 66%</span></dd></div>
+            </dl>
+            <span data-zh="这是两段样本的比较，单靠时间切分无法识别疫情的因果影响。" data-en="This compares two subsamples. The split alone cannot identify a causal effect of the pandemic.">这是两段样本的比较，单靠时间切分无法识别疫情的因果影响。</span>
           </div>
+          <div class="demo-links"><a href="#curve" data-zh="用示意曲线看三个因子" data-en="See the three factors in the curve demo">用示意曲线看三个因子</a></div>
         </div>
       </div></div></div>
       </div>
 
-      <div class="xitem">
-      <button class="xtile" type="button" data-target="5" aria-expanded="false">
+      <div class="xitem" id="supply-chain-resilience">
+      <button class="xtile" type="button" data-target="5" aria-controls="supply-chain-resilience-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="9.5" height="8" rx="4"/><rect x="11.5" y="8" width="9.5" height="8" rx="4"/></svg></span>
-        <span class="xtile-meta"><b data-zh="全球价值链与供应链韧性" data-en="GVC &amp; Supply Chain Resilience">全球价值链与供应链韧性</b><em data-zh="独立完成 SRP 课题的计量分析，研究全球价值链参与度与产业链韧性的关系。" data-en="Handled the econometrics for an SRP project on global value chain participation and supply chain resilience.">独立完成 SRP 课题的计量分析，研究全球价值链参与度与产业链韧性的关系。</em></span>
+        <span class="xtile-meta"><b data-zh="全球价值链与供应链韧性" data-en="GVC &amp; Supply Chain Resilience">全球价值链与供应链韧性</b><em data-zh="负责 SRP 小组的计量分析，检验价值链参与度和制造业韧性的关系。" data-en="I ran the econometric analysis for an SRP team study of value-chain participation and manufacturing resilience.">负责 SRP 小组的计量分析，检验价值链参与度和制造业韧性的关系。</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2025.03–2026.04</span></span>
-      <div class="xdetail" data-panel="5"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="supply-chain-resilience-detail" data-panel="5" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">05</div>
           <div class="xcard-meta">
@@ -1330,14 +1346,14 @@
       </div></div></div>
       </div>
 
-      <div class="xitem">
-      <button class="xtile" type="button" data-target="6" aria-expanded="false">
+      <div class="xitem" id="byd-valuation">
+      <button class="xtile" type="button" data-target="6" aria-controls="byd-valuation-detail" aria-expanded="false">
         <span class="xtile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></span>
-        <span class="xtile-meta"><b data-zh="比亚迪投资研究" data-en="BYD Equity Research">比亚迪投资研究</b><em data-zh="担任 4 人小组组长，主导比亚迪投资研究框架与估值分析。" data-en="Led a 4-person team on BYD equity research, driving the framework and valuation.">担任 4 人小组组长，主导比亚迪投资研究框架与估值分析。</em></span>
+        <span class="xtile-meta"><b data-zh="比亚迪投资研究" data-en="BYD Equity Research">比亚迪投资研究</b><em data-zh="为四人小组的英文研究报告独立完成比亚迪估值，推导目标股价区间。" data-en="I valued BYD and derived a target price range for a four-person team’s English research report.">为四人小组的英文研究报告独立完成比亚迪估值，推导目标股价区间。</em></span>
         <span class="xtile-plus" aria-hidden="true"></span>
       </button>
       <span class="xnode" aria-hidden="true"><span>2024.10</span></span>
-      <div class="xdetail" data-panel="6"><div class="xdetail-inner"><div class="xdetail-body">
+      <div class="xdetail" id="byd-valuation-detail" data-panel="6" aria-hidden="true" inert><div class="xdetail-inner"><div class="xdetail-body">
         <div class="xcard-top">
           <div class="xcard-num num">06</div>
           <div class="xcard-meta">
@@ -1346,18 +1362,10 @@
           </div>
         </div>
         <h3 data-zh="比亚迪投资研究" data-en="BYD Equity Research">比亚迪投资研究</h3>
-        <p data-zh="4 人小组担任组长，搭建报告整体分析框架。独立完成标的估值测算，协同组员开展投资风险分析，输出完整英文投资研究报告，形成长短期差异化投资判断。" data-en="Led a 4-person team, building the report's overall analytical framework. Independently completed the valuation workstream, worked with the team on investment-risk analysis, and delivered a complete English-language investment research report with a differentiated short- vs. long-term view.">4 人小组担任组长，搭建报告整体分析框架。独立完成标的估值测算，协同组员开展投资风险分析，输出完整英文投资研究报告，形成长短期差异化投资判断。</p>
-        <div class="xcard-body">
-          <p data-zh="参与 CFA 投资分析竞赛，赛题指定比亚迪为研究标的，4 人小组开展个股深度研究，分工协作完成全英文投资研究报告。" data-en="Took part in a CFA investment-analysis competition, which assigned BYD as the research target; a 4-person team conducted in-depth single-stock research, dividing up the work to produce a full English investment research report.">参与 CFA 投资分析竞赛，赛题指定比亚迪为研究标的，4 人小组开展个股深度研究，分工协作完成全英文投资研究报告。</p>
-          <ul>
-            <li data-zh="结合企业财报、行业公开数据，使用 PE、PB、ROE 多套估值维度，预测企业盈利水平，测算推导对应的目标股价区间" data-en="Combined company filings and public industry data, using PE, PB and ROE across multiple valuation lenses to forecast earnings and derive a target share-price range">结合企业财报、行业公开数据，使用 PE、PB、ROE 多套估值维度，预测企业盈利水平，测算推导对应的目标股价区间</li>
-            <li data-zh="梳理企业面临的各类投资风险，涵盖财务压力、行业竞争加剧、上游原材料价格波动、海外贸易政策壁垒，同时整理每一项风险对应的现实缓释因素" data-en="Mapped the company's investment risks — financial pressure, intensifying industry competition, upstream raw-material price swings, and overseas trade-policy barriers — along with the real-world mitigants for each">梳理企业面临的各类投资风险，涵盖财务压力、行业竞争加剧、上游原材料价格波动、海外贸易政策壁垒，同时整理每一项风险对应的现实缓释因素</li>
-            <li data-zh="整合小组各个模块的产出，统一全文逻辑、图表与行文规范，汇总输出完整英文研究报告" data-en="Pulled together every module's output, unified the report's logic, charts and formatting, and produced the final English research report">整合小组各个模块的产出，统一全文逻辑、图表与行文规范，汇总输出完整英文研究报告</li>
-          </ul>
-          <div class="xfinding">
-            <b data-zh="短期观望，长期关注" data-en="Cautious near term, watch long term">短期观望，长期关注</b>
-            <span data-zh="小组结合估值和经营风险，给出短期观望、长期关注的判断。" data-en="Based on valuation and operating risks, the team took a cautious near-term view and kept BYD on its longer-term watchlist.">小组结合估值和经营风险，给出短期观望、长期关注的判断。</span>
-          </div>
+        <div class="xcard-body case-body">
+          <p data-zh="这是 2024 年的竞赛研究。四人小组共同写英文报告，我负责搭研究框架和整合报告，并独立完成估值。" data-en="This was a 2024 competition project. Our four-person team wrote the English report. I set the research structure, edited the final report and completed the valuation independently.">这是 2024 年的竞赛研究。四人小组共同写英文报告，我负责搭研究框架和整合报告，并独立完成估值。</p>
+          <p data-zh="我从比亚迪财报和公开行业数据出发，预测盈利，用市盈率（P/E）、市净率（P/B）和净资产收益率（ROE）交叉看估值，给出目标股价区间。" data-en="Using BYD’s filings and public industry data, I forecast earnings, assessed valuation across P/E, P/B and ROE, and derived a target price range.">我从比亚迪财报和公开行业数据出发，预测盈利，用市盈率（P/E）、市净率（P/B）和净资产收益率（ROE）交叉看估值，给出目标股价区间。</p>
+          <p data-zh="小组同时讨论了行业竞争、原材料成本和海外贸易壁垒。报告把这些风险与估值放在一起，形成了短期观望、长期关注的判断。" data-en="The team considered industry competition, input costs and overseas trade barriers alongside valuation. The report concluded with a cautious near-term view and a longer-term watch.">小组同时讨论了行业竞争、原材料成本和海外贸易壁垒。报告把这些风险与估值放在一起，形成了短期观望、长期关注的判断。</p>
         </div>
       </div></div></div>
       </div>
@@ -1512,23 +1520,39 @@
   card.addEventListener('lostpointercapture', releaseBadge);
   card.addEventListener('dragstart', function(event){ event.preventDefault(); });
 
-  // ---- research exhibits: click a tile to expand its detail inline ----
-  var xtiles = Array.prototype.slice.call(document.querySelectorAll('.xtile'));
-  var xdetails = Array.prototype.slice.call(document.querySelectorAll('.xdetail'));
-  xtiles.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var target = btn.getAttribute('data-target');
-      var willOpen = !btn.classList.contains('is-open');
-      xtiles.forEach(function(b){
-        var open = willOpen && b === btn;
-        b.classList.toggle('is-open', open);
-        b.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      xdetails.forEach(function(d){
-        d.classList.toggle('is-open', willOpen && d.getAttribute('data-panel') === target);
-      });
+  // Open a shared research link using the same controls as a tile click.
+  var xtiles = Array.from(document.querySelectorAll('.xtile'));
+  function openTile(selected){
+    xtiles.forEach(function(tile){
+      var open = tile === selected;
+      var panel = document.getElementById(tile.getAttribute('aria-controls'));
+      tile.classList.toggle('is-open', open);
+      tile.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+      panel.setAttribute('aria-hidden', String(!open));
+      panel.inert = !open;
+    });
+  }
+  function openLinkedTile(hash){
+    var item = document.getElementById(hash.slice(1));
+    if (item && item.classList.contains('xitem')) {
+      openTile(item.querySelector('.xtile'));
+    }
+  }
+  xtiles.forEach(function(tile){
+    tile.addEventListener('click', function(){
+      openTile(tile.classList.contains('is-open') ? null : tile);
     });
   });
+  document.querySelectorAll('.demo-links a').forEach(function(link){
+    link.addEventListener('click', function(event){
+      if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+        openLinkedTile(link.hash);
+      }
+    });
+  });
+  window.addEventListener('hashchange', function(){ openLinkedTile(window.location.hash); });
+  openLinkedTile(window.location.hash);
 })();
 
 (function(){
